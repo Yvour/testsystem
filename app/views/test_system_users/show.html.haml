@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Login:
+  = @test_system_user.login
+%p
+  %b Firstname:
+  = @test_system_user.firstname
+%p
+  %b Middlename:
+  = @test_system_user.middlename
+%p
+  %b Lastname:
+  = @test_system_user.lastname
+
+= link_to 'Edit', edit_test_system_user_path(@test_system_user)
+\|
+= link_to 'Back', test_system_users_path

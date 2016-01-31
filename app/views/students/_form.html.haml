@@ -1,0 +1,14 @@
+= simple_form_for(@student) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :login
+    = f.input :firstname
+    = f.input :middlename
+    = f.input :lastname
+    = f.input :email
+    = f.simple_fields_for :student_group_membership, @student.student_group_membership do |m|
+      = m.association :student_group
+
+  .form-actions
+    = f.button :submit

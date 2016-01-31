@@ -1,0 +1,25 @@
+%h1 Listing course_groups
+
+%table
+  %thead
+    %tr
+      %th Course
+      %th Group
+      %th Coursename
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @course_groups.each do |course_group|
+      %tr
+        %td= course_group.course
+        %td= course_group.group
+        %td= course_group.coursename
+        %td= link_to 'Show', course_group
+        %td= link_to 'Edit', edit_course_group_path(course_group)
+        %td= link_to 'Destroy', course_group, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Course group', new_course_group_path

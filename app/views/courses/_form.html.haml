@@ -1,0 +1,16 @@
+= simple_form_for(@course) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :discipline
+    = f.association :teacher
+    = f.input :coursename
+    
+    = collection_check_boxes(:course, :group_ids, StudentGroup.all, :id, :to_label, 
+    
+    options = {:item_wrapper_class => "lister",
+               :item_wrapper_tag => "div"})     
+      
+
+  .form-actions
+    = f.button :submit

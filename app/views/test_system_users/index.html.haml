@@ -1,0 +1,27 @@
+%h1 Listing test_system_users
+
+%table
+  %thead
+    %tr
+      %th Login
+      %th Firstname
+      %th Middlename
+      %th Lastname
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @test_system_users.each do |test_system_user|
+      %tr
+        %td= test_system_user.login
+        %td= test_system_user.firstname
+        %td= test_system_user.middlename
+        %td= test_system_user.lastname
+        %td= link_to 'Show', test_system_user
+        %td= link_to 'Edit', edit_test_system_user_path(test_system_user)
+        %td= link_to 'Destroy', test_system_user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Test system user', new_test_system_user_path

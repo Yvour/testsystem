@@ -1,0 +1,9 @@
+= simple_form_for(@duty) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :Discipline
+    = f.association :Teacher
+
+  .form-actions
+    = f.button :submit

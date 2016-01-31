@@ -1,0 +1,10 @@
+= simple_form_for(@course_group) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :course
+    = f.association :group, wrapperclass: 'StudentGroup'
+    = f.input :coursename
+
+  .form-actions
+    = f.button :submit

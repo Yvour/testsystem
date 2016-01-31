@@ -1,0 +1,9 @@
+= simple_form_for(@student_group_membership) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :Student
+    = f.input :StudentGroup
+
+  .form-actions
+    = f.button :submit

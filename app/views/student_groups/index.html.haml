@@ -1,0 +1,21 @@
+%h1 Listing student_groups
+
+%table
+  %thead
+    %tr
+      %th Groupname
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @student_groups.each do |student_group|
+      %tr
+        %td= student_group.groupname
+        %td= link_to 'Show', student_group
+        %td= link_to 'Edit', edit_student_group_path(student_group)
+        %td= link_to 'Destroy', student_group, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Student group', new_student_group_path
